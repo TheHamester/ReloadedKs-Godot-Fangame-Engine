@@ -93,8 +93,9 @@ enum SHOOTING_TYPE {
 }
 
 # Changes shooting behaviour
-var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.HOLDING
-var shooting_interval:float = 0.2
+var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.TAPPING
+var shooting_interval:float = 0.1
+# Max amount of bullets on the screen (-1 of unlimited)
 var max_bullets:int = 4
 
 """---------------------------------
@@ -748,7 +749,7 @@ func handle_shooting() -> void:
 	# An equivalent to gamemaker's "instance_number() < max_bullets"
 	# It checks how many nodes belonging to the "Bullet" group
 	# exist in the current scene
-	if get_tree().get_nodes_in_group("Bullet").size() < max_bullets:
+	if max_bullets == -1 or get_tree().get_nodes_in_group("Bullet").size() < max_bullets:
 		
 		# Loads the bullet scene, instances it, assigns the shooting direction
 		# and global position, makes a sound and then adds it to the main scene 
