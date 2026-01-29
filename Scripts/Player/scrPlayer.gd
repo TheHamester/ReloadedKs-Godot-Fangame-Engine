@@ -3,9 +3,6 @@ extends CharacterBody2D
 """----------------------------------------
 -------------- FEATURE_FLAGS -------------- 
 ----------------------------------------"""
-const ALTERNATIVE_WALLJUMP:bool = true
-const ALTERNATIVE_WALLJUMP_MULT:float = 5.0 if ALTERNATIVE_WALLJUMP else 1.0
-
 const PLATFORM_FALLTHROUGH:bool = true
 
 const HOLD_TO_SHOOT:bool = true
@@ -77,7 +74,18 @@ enum MOVEMENT_TYPE {
 
 # Changes how the player should move when pressing both left and right
 var current_movement_type: MOVEMENT_TYPE = MOVEMENT_TYPE.RIGHT_TAKES_PRIORITY
+var same_wall_walljump_boost: float = 5.0
 
+# Walljump behaviour
+# CLASSIC: Walljumping requires pressing 'jump' and then opposite direction
+# SAME_WALL: Allows to continously walljump off the same wall to gain height
+enum WALLLJUMP_TYPE {
+	CLASSIC,
+	SAME_WALL
+}
+
+# Changes walljump behaviour
+var current_walljump_type: WALLLJUMP_TYPE = WALLLJUMP_TYPE.CLASSIC
 
 
 """---------------------------------
@@ -197,7 +205,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			STATE.WALLJUMPING:
 				var jump_direction = get_wall_normal()
 				var walljumping_action = func():
-					main_velocity.x = jump_direction.x * h_speed * ALTERNATIVE_WALLJUMP_MULT
+					main_velocity.x = jump_direction.x * h_speed
+					if current_walljump_type == WALLLJUMP_TYPE.SAME_WALL:
+						main_velocity.x *= same_wall_walljump_boost
+					
 					main_velocity.y = -s_jump_speed
 					can_walljump = false
 					GLOBAL_SOUNDS.play_sound("sndJump")
@@ -205,31 +216,35 @@ func _unhandled_input(event: InputEvent) -> void:
 					# Emit the "player_walljumped" signal
 					GLOBAL_SIGNALS.player_walljumped.emit()
 				
-				# Walljumping should only happen if we hold the jump button first
-				if Input.is_action_just_pressed("button_jump"):
-					if ALTERNATIVE_WALLJUMP:
-						walljumping_action.call()
-						current_state = STATE.JUMPING
-						d_jump = true
-						
-						if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
-							horizontal_movement_direction = 1.0
+				match current_walljump_type:
+					WALLLJUMP_TYPE.CLASSIC:
+						# Walljumping should only happen if we hold the jump button first
+						if Input.is_action_pressed("button_jump"):
+							# Walljump to the right
+							if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
+								horizontal_movement_direction = 1.0
+								walljumping_action.call()
+								current_state = STATE.JUMPING
+								
+							# Walljump to the left
+							if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
+								horizontal_movement_direction = -1.0
+								walljumping_action.call()
+								current_state = STATE.JUMPING
+					WALLLJUMP_TYPE.SAME_WALL:
+						# Walljumping should only happen if we hold the jump button first
+						if Input.is_action_just_pressed("button_jump"):
+							walljumping_action.call()
+							current_state = STATE.JUMPING
+							d_jump = true
 							
-						if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
-							horizontal_movement_direction = -1.0
-					else:
-						# Walljump to the right
-						if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
-							horizontal_movement_direction = 1.0
-							walljumping_action.call()
-							current_state = STATE.JUMPING
-						
-						# Walljump to the left
-						if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
-							horizontal_movement_direction = -1.0
-							walljumping_action.call()
-							current_state = STATE.JUMPING
-				else:
+							if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
+								horizontal_movement_direction = 1.0
+									
+							if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
+								horizontal_movement_direction = -1.0
+				
+				if not Input.is_action_pressed("button_jump"):
 					# While not holding the jump button, pressing left or right on
 					# the opposite direction to the vine leaves it and stops the
 					# walljumping state.
