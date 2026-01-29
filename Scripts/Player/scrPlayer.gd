@@ -5,9 +5,6 @@ extends CharacterBody2D
 ----------------------------------------"""
 const PLATFORM_FALLTHROUGH:bool = true
 
-const HOLD_TO_SHOOT:bool = true
-const HOLD_TO_SHOOT_INTERVAL:float = 0.2
-
 """----------------------------------------
 ---------- VARIABLE DECLARATIONS ---------- 
 ----------------------------------------"""
@@ -87,6 +84,18 @@ enum WALLLJUMP_TYPE {
 # Changes walljump behaviour
 var current_walljump_type: WALLLJUMP_TYPE = WALLLJUMP_TYPE.CLASSIC
 
+# Shooting behaviour
+# TAPPING: Shoots one bullet at the time
+# HOLDING: Allows holding to shoot continously
+enum SHOOTING_TYPE {
+	TAPPING,
+	HOLDING
+}
+
+# Changes shooting behaviour
+var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.TAPPING
+var shooting_interval:float = 0.2
+var max_bullets:int = 4
 
 """---------------------------------
 ---------- CREATION EVENT ----------
@@ -270,7 +279,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		# Extra input actions
 		# Shooting
-		if not HOLD_TO_SHOOT:
+		if current_shooting_type == SHOOTING_TYPE.TAPPING:
 			if event.is_action_pressed("button_shoot"):
 				if current_state != STATE.WALLJUMPING:
 					handle_shooting()
@@ -557,11 +566,11 @@ func _physics_process(delta):
 		else:
 			wind_velocity = Vector2.ZERO
 	
-	if HOLD_TO_SHOOT:
+	if current_shooting_type == SHOOTING_TYPE.HOLDING:
 		if Input.is_action_pressed("button_shoot"):
 			if shoot_timer <= 0.0:
 				handle_shooting()
-				shoot_timer = HOLD_TO_SHOOT_INTERVAL
+				shoot_timer = shooting_interval
 			shoot_timer -= delta
 		
 		if Input.is_action_just_released("button_shoot"):
@@ -733,10 +742,10 @@ func handle_jumping() -> void:
 # Classic fangame bullet attack
 func handle_shooting() -> void:
 	
-	# An equivalent to gamemaker's "instance_number() < 4"
+	# An equivalent to gamemaker's "instance_number() < max_bullets"
 	# It checks how many nodes belonging to the "Bullet" group
 	# exist in the current scene
-	if get_tree().get_nodes_in_group("Bullet").size() < 4:
+	if get_tree().get_nodes_in_group("Bullet").size() < max_bullets:
 		
 		# Loads the bullet scene, instances it, assigns the shooting direction
 		# and global position, makes a sound and then adds it to the main scene 
