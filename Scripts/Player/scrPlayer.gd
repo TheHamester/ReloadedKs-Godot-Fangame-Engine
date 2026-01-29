@@ -93,6 +93,7 @@ var shooting_interval:float = 0.1
 # Max amount of bullets on the screen (-1 of unlimited)
 var max_bullets:int = 4
 
+# Allow falling through platform on pressing 'down'
 var allow_platform_fallthrough: bool = true
 
 """---------------------------------
