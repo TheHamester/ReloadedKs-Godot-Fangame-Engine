@@ -1,31 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp85j3jgqvoma"]
+[gd_scene format=3 uid="uid://cp85j3jgqvoma"]
 
 [ext_resource type="Texture2D" uid="uid://dsk1yw0sff3bo" path="res://Graphics/Sprites/Hazards/sprLaserBeam.png" id="1_5flvw"]
-[ext_resource type="Script" path="res://Scripts/Hazards/scrLaserDynamic.gd" id="1_dytci"]
+[ext_resource type="Script" uid="uid://csbg3pv4l2ljt" path="res://Scripts/Hazards/scrLaserDynamic.gd" id="1_dytci"]
 [ext_resource type="Texture2D" uid="uid://0ikbx7jpykgk" path="res://Graphics/Sprites/Hazards/sprLaserMask.png" id="2_308sr"]
 
-[node name="objLaserDynamic" type="Node2D"]
+[node name="objLaserDynamic" type="Node2D" unique_id=1835704989]
 script = ExtResource("1_dytci")
 
-[node name="laserComponents" type="Node2D" parent="."]
+[node name="laserComponents" type="Node2D" parent="." unique_id=1804154236]
 metadata/_edit_lock_ = true
 
-[node name="RayCast2D" type="RayCast2D" parent="laserComponents"]
+[node name="RayCast2D" type="RayCast2D" parent="laserComponents" unique_id=840555268]
 target_position = Vector2(0, 0)
 collision_mask = 3
 hit_from_inside = true
 
-[node name="Sprite2D" type="Sprite2D" parent="laserComponents"]
+[node name="Sprite2D" type="Sprite2D" parent="laserComponents" unique_id=1566843131]
 z_index = -1
 texture_repeat = 2
 texture = ExtResource("1_5flvw")
 centered = false
 offset = Vector2(-8, -7)
 region_enabled = true
-region_rect = Rect2(-40.5, 0, 8, 14)
+region_rect = Rect2(-43, 0, 8, 14)
 
-[node name="Sprite2D2" type="Sprite2D" parent="laserComponents"]
+[node name="Sprite2D2" type="Sprite2D" parent="laserComponents" unique_id=1651508217]
 z_index = 1
 texture = ExtResource("2_308sr")
 
-[node name="beamTarget" type="Marker2D" parent="."]
+[node name="beamTarget" type="Marker2D" parent="." unique_id=1348153552]

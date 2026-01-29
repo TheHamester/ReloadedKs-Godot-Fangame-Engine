@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm40t36a6m8sc"]
+[gd_scene format=3 uid="uid://bm40t36a6m8sc"]
 
 [ext_resource type="Texture2D" uid="uid://ce764rqb8dydy" path="res://Graphics/Tiles/tilAllTiles.png" id="1_4g2qg"]
 [ext_resource type="Texture2D" uid="uid://dw4a6bqoh6dd8" path="res://Graphics/Tiles/tilSlopes.png" id="2_tbu1y"]
@@ -81,6 +81,6 @@ pattern_3 = SubResource("TileMapPattern_gcvv7")
 pattern_4 = SubResource("TileMapPattern_g36uh")
 pattern_5 = SubResource("TileMapPattern_fagje")
 
-[node name="til32x32" type="TileMapLayer" groups=["Walls"]]
+[node name="til32x32" type="TileMapLayer" unique_id=972062325 groups=["Walls"]]
 tile_set = SubResource("TileSet_5neqq")
 rendering_quadrant_size = 32

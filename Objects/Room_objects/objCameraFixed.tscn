@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://yab7pya0yr1j"]
+[gd_scene format=3 uid="uid://yab7pya0yr1j"]
 
 [ext_resource type="Script" uid="uid://m0nyamsw7kiv" path="res://Scripts/Room_objects/scrCameraFixed.gd" id="1_70ng6"]
 [ext_resource type="Texture2D" uid="uid://b6wjn6wemp8tk" path="res://Graphics/Sprites/Room_objects/sprCamera.png" id="1_dxfkf"]
 
-[node name="objCameraFixed" type="Camera2D" groups=["Camera"]]
+[node name="objCameraFixed" type="Camera2D" unique_id=1682935776 groups=["Camera"]]
 process_priority = 1
 process_callback = 0
 script = ExtResource("1_70ng6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657457580]
 texture = ExtResource("1_dxfkf")

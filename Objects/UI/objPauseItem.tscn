@@ -1,24 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cktvymptg823"]
+[gd_scene format=3 uid="uid://cktvymptg823"]
 
-[ext_resource type="Script" path="res://Scripts/UI/scrPauseItem.gd" id="1_ndyr6"]
+[ext_resource type="Script" uid="uid://batsf8n0ipcfc" path="res://Scripts/UI/scrPauseItem.gd" id="1_ndyr6"]
 [ext_resource type="Texture2D" uid="uid://cs7d7k2kmj13y" path="res://Graphics/Sprites/Collectables/sprSecretItem.png" id="1_q2g7b"]
 [ext_resource type="FontFile" uid="uid://4m283seugry" path="res://Graphics/Fonts/NFPixels-Regular.otf" id="2_p5km2"]
 [ext_resource type="Texture2D" uid="uid://dmp3vukn7mh7y" path="res://Graphics/Sprites/UI/sprPauseItemBackground.png" id="4_fnkd7"]
 
-[node name="objPauseItem" type="Control"]
+[node name="objPauseItem" type="Control" unique_id=1300473734]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ndyr6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359028848]
 scale = Vector2(2, 2)
 texture = ExtResource("1_q2g7b")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=788722655]
 z_index = -1
 texture = ExtResource("4_fnkd7")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2106822233]
 layout_mode = 0
 offset_left = 64.0
 offset_top = -64.0
@@ -31,7 +31,7 @@ theme_override_font_sizes/font_size = 40
 text = "Item Name"
 vertical_alignment = 2
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=600682539]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 608.0

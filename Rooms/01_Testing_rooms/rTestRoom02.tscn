@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c7x2p1xnrh2l4"]
+[gd_scene format=4 uid="uid://c7x2p1xnrh2l4"]
 
 [ext_resource type="PackedScene" uid="uid://bm40t36a6m8sc" path="res://Objects/Tiles/til32x32.tscn" id="1_eguov"]
 [ext_resource type="PackedScene" uid="uid://bo3vrmvp7ayf8" path="res://Objects/Room_objects/objWarp.tscn" id="4_cy3jd"]
@@ -18,28 +18,28 @@
 [ext_resource type="AudioStream" uid="uid://cdt6et828ao0j" path="res://Audio/Sounds/sndBlockChange.wav" id="16_vq0hl"]
 [ext_resource type="PackedScene" uid="uid://chskqaeqby1wj" path="res://Objects/Hazards/objJumpSwitchSpike.tscn" id="18_3lka1"]
 
-[node name="rTestRoom02" type="Node2D"]
+[node name="rTestRoom02" type="Node2D" unique_id=1534467268]
 
-[node name="Environment" type="Node2D" parent="."]
+[node name="Environment" type="Node2D" parent="." unique_id=1950223354]
 
-[node name="objMusicPlayer" parent="Environment" instance=ExtResource("5_nsdgs")]
+[node name="objMusicPlayer" parent="Environment" unique_id=944550091 instance=ExtResource("5_nsdgs")]
 position = Vector2(-16, 16)
 song_id = ExtResource("6_8ejd4")
 
-[node name="til32x32" parent="Environment" instance=ExtResource("1_eguov")]
+[node name="til32x32" parent="Environment" unique_id=362146174 instance=ExtResource("1_eguov")]
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAAAAAcAAAABAAEAAAAAAAgAAAABAAEAAAAAAAkAAAABAAEAAAAAAAoAAAABAAEAAAAAAAsAAAABAAEAAAAAAAwAAAABAAEAAAAAAA0AAAABAAEAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAAAABAAAAABAAEAAAAAABEAAAABAAEAAAAAABIAAAABAAEAAAABAAAAAAABAAEAAAABABEAAAAAAAEAAAABABIAAAABAAEAAAACAAAAAAABAAEAAAACABEAAAAAAAEAAAACABIAAAABAAEAAAADAAAAAAABAAEAAAADAAUAAAAAAAEAAAADAAYAAAABAAEAAAADAAcAAAABAAEAAAADAAgAAAABAAEAAAADAAkAAAABAAEAAAADAAoAAAABAAEAAAADAAsAAAABAAEAAAADAAwAAAABAAEAAAADAA0AAAABAAEAAAADABEAAAAAAAEAAAADABIAAAABAAEAAAAEAAAAAAABAAEAAAAEABEAAAAAAAEAAAAEABIAAAABAAEAAAAFAAAAAAABAAEAAAAFABEAAAAAAAEAAAAFABIAAAABAAEAAAAGAAAAAAABAAEAAAAGABEAAAAAAAEAAAAGABIAAAABAAEAAAAHAAAAAAABAAEAAAAHAAcAAAAAAAEAAAAHAAsAAAAAAAEAAAAHABEAAAAAAAEAAAAHABIAAAABAAEAAAAIAAAAAAABAAEAAAAIAAcAAAAAAAEAAAAIAAsAAAAAAAEAAAAIABEAAAAAAAEAAAAIABIAAAABAAEAAAAJAAAAAAABAAEAAAAJAAcAAAAAAAEAAAAJAAsAAAAAAAEAAAAJABEAAAAAAAEAAAAJABIAAAABAAEAAAAKAAAAAAABAAEAAAAKAA4AAAAAAAEAAAAKABEAAAAAAAEAAAAKABIAAAABAAEAAAALAAAAAAABAAEAAAALAAQAAAAAAAEAAAALAAkAAAAAAAEAAAALAA4AAAAAAAEAAAALABEAAAAAAAEAAAALABIAAAABAAEAAAAMAAAAAAABAAEAAAAMAAQAAAAAAAEAAAAMAAkAAAAAAAEAAAAMAA4AAAAAAAEAAAAMABEAAAAAAAEAAAAMABIAAAABAAEAAAANAAAAAAABAAEAAAANAAQAAAAAAAEAAAANAAkAAAAAAAEAAAANAA4AAAAAAAEAAAANABEAAAAAAAEAAAANABIAAAABAAEAAAAOAAAAAAABAAEAAAAOAA4AAAAAAAEAAAAOABEAAAAAAAEAAAAOABIAAAABAAEAAAAPAAAAAAABAAEAAAAPAAcAAAAAAAEAAAAPAAsAAAAAAAEAAAAPABEAAAAAAAEAAAAPABIAAAABAAEAAAAQAAAAAAABAAEAAAAQAAcAAAAAAAEAAAAQAAsAAAAAAAEAAAAQABEAAAAAAAEAAAAQABIAAAABAAEAAAARAAAAAAABAAEAAAARAAcAAAAAAAEAAAARAAsAAAAAAAEAAAARABEAAAAAAAEAAAARABIAAAABAAEAAAASAAAAAAABAAEAAAASABEAAAAAAAEAAAASABIAAAABAAEAAAATAAAAAAABAAEAAAATABEAAAAAAAEAAAATABIAAAABAAEAAAAUAAAAAAABAAEAAAAUAAEAAAABAAEAAAAUAAIAAAABAAEAAAAUAAMAAAABAAEAAAAUAAQAAAABAAEAAAAUAAUAAAABAAEAAAAUAAsAAAAAAAEAAAAUABEAAAAAAAEAAAAUABIAAAABAAEAAAAVAAAAAAABAAEAAAAVAAsAAAAAAAEAAAAVABEAAAAAAAEAAAAVABIAAAABAAEAAAAWAAAAAAABAAEAAAAWAAsAAAAAAAEAAAAWABEAAAAAAAEAAAAWABIAAAABAAEAAAAXAAAAAAABAAEAAAAXAAoAAAADAAIAAAAXAAsAAAAAAAEAAAAXABEAAAAAAAEAAAAXABIAAAABAAEAAAAYAAAAAAABAAEAAAAYAAEAAAABAAEAAAAYAAIAAAABAAEAAAAYAAMAAAABAAEAAAAYAAQAAAABAAEAAAAYAAUAAAABAAEAAAAYAAYAAAABAAEAAAAYAAcAAAABAAEAAAAYAAgAAAABAAEAAAAYAAkAAAABAAEAAAAYAAoAAAABAAEAAAAYAAsAAAABAAEAAAAYAAwAAAABAAEAAAAYAA0AAAABAAEAAAAYAA4AAAABAAEAAAAYAA8AAAABAAEAAAAYABAAAAABAAEAAAAYABEAAAABAAEAAAAYABIAAAABAAEAAAA=")
 
-[node name="objBackgroundTexture" parent="Environment" instance=ExtResource("4_dbyva")]
+[node name="objBackgroundTexture" parent="Environment" unique_id=841939943 instance=ExtResource("4_dbyva")]
 offset_right = 800.0
 offset_bottom = 608.0
 metadata/_edit_lock_ = true
 
-[node name="Room_related" type="Node2D" parent="."]
+[node name="Room_related" type="Node2D" parent="." unique_id=1620220489]
 
-[node name="objPlayer" parent="Room_related" instance=ExtResource("5_fimqj")]
+[node name="objPlayer" parent="Room_related" unique_id=1429715795 instance=ExtResource("5_fimqj")]
 position = Vector2(400, 528)
 
-[node name="objCameraDynamic" parent="Room_related" node_paths=PackedStringArray("target_node") instance=ExtResource("5_x1x80")]
+[node name="objCameraDynamic" parent="Room_related" unique_id=233690418 node_paths=PackedStringArray("target_node") instance=ExtResource("5_x1x80")]
 position = Vector2(-16, 48)
 target_node = NodePath("../objPlayer")
 stop_left_at = 0
@@ -47,108 +47,108 @@ stop_up_at = 0
 stop_right_at = 800
 stop_down_at = 608
 
-[node name="objSavePoint" parent="Room_related" instance=ExtResource("8_yym6q")]
+[node name="objSavePoint" parent="Room_related" unique_id=1230801386 instance=ExtResource("8_yym6q")]
 position = Vector2(400, 496)
 
-[node name="objWarp" parent="Room_related" instance=ExtResource("4_cy3jd")]
+[node name="objWarp" parent="Room_related" unique_id=1222837504 instance=ExtResource("4_cy3jd")]
 position = Vector2(400, 432)
 warp_to = "res://Rooms/01_Testing_rooms/rRoomSelection.tscn"
 
-[node name="Gimmicks" type="Node2D" parent="."]
+[node name="Gimmicks" type="Node2D" parent="." unique_id=1554653194]
 
-[node name="Coins" type="Node2D" parent="Gimmicks"]
+[node name="Coins" type="Node2D" parent="Gimmicks" unique_id=1135197155]
 
-[node name="objCoinManager" parent="Gimmicks/Coins" node_paths=PackedStringArray("scenes_to_destroy") instance=ExtResource("9_fimqj")]
+[node name="objCoinManager" parent="Gimmicks/Coins" unique_id=653930731 node_paths=PackedStringArray("scenes_to_destroy") instance=ExtResource("9_fimqj")]
 position = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAQABQAAAAAAAAAAQAQAAwAAAAAAAAAAQAYABAAAAAAAAAAAQAgAAwAAAAAAAAAAQAgABQAAAAAAAAAAQA=")
 scenes_to_destroy = [NodePath("../tilDestroyedByCoins"), NodePath("../tilDestroyedByCoins2")]
 
-[node name="tilDestroyedByCoins" parent="Gimmicks/Coins" instance=ExtResource("1_eguov")]
+[node name="tilDestroyedByCoins" parent="Gimmicks/Coins" unique_id=919258506 instance=ExtResource("1_eguov")]
 tile_map_data = PackedByteArray("AAALAAwAAAACAAMAAAAMAAwAAAACAAMAAAANAAwAAAACAAMAAAALAA0AAAADAAMAAAANAA0AAAADAAMAAAA=")
 
-[node name="tilDestroyedByCoins2" parent="Gimmicks/Coins" instance=ExtResource("1_eguov")]
+[node name="tilDestroyedByCoins2" parent="Gimmicks/Coins" unique_id=2031199532 instance=ExtResource("1_eguov")]
 tile_map_data = PackedByteArray("AAAUAAcAAAADAAMAAAAUAAgAAAADAAMAAAAUAAkAAAADAAMAAAAUAAoAAAADAAMAAAA=")
 
-[node name="objCollectableItem" parent="Gimmicks" instance=ExtResource("10_lunno")]
+[node name="objCollectableItem" parent="Gimmicks" unique_id=187546605 instance=ExtResource("10_lunno")]
 position = Vector2(720, 80)
 item_name = "Item 02"
 
-[node name="tilVines" parent="Gimmicks" instance=ExtResource("11_hgcl1")]
+[node name="tilVines" parent="Gimmicks" unique_id=1448360230 instance=ExtResource("11_hgcl1")]
 tile_map_data = PackedByteArray("AAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAABAAgAAAABAAAAAAABAAkAAAABAAAAAAABAAoAAAABAAAAAAABAAsAAAABAAAAAAABAAwAAAABAAAAAAABAA0AAAABAAAAAAABAA4AAAABAAAAAAABAA8AAAABAAAAAAABABAAAAABAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAGAA0AAAAAAAAAAAA=")
 
-[node name="objWater" parent="Gimmicks" instance=ExtResource("12_vixq5")]
+[node name="objWater" parent="Gimmicks" unique_id=2115575514 instance=ExtResource("12_vixq5")]
 position = Vector2(592, 48)
 color = Color(0.24705882, 0.8745098, 1, 0.49803922)
 polygon = PackedVector2Array(-560, -16, 48, -16, 48, 16, -528, 16, -528, 80, -560, 80)
 water_type = 2
 
-[node name="objInvisibleBlock" parent="Gimmicks" instance=ExtResource("16_ispj3")]
+[node name="objInvisibleBlock" parent="Gimmicks" unique_id=1580568883 instance=ExtResource("16_ispj3")]
 position = Vector2(592, 464)
 
-[node name="objInvisibleBlock2" parent="Gimmicks" instance=ExtResource("16_ispj3")]
+[node name="objInvisibleBlock2" parent="Gimmicks" unique_id=279525897 instance=ExtResource("16_ispj3")]
 position = Vector2(624, 464)
 
-[node name="Hazards" type="Node2D" parent="."]
+[node name="Hazards" type="Node2D" parent="." unique_id=364084832]
 
-[node name="objJumpSwitchSpike" parent="Hazards" instance=ExtResource("18_3lka1")]
+[node name="objJumpSwitchSpike" parent="Hazards" unique_id=664026781 instance=ExtResource("18_3lka1")]
 position = Vector2(720, 528)
 
-[node name="objJumpSwitchSpike2" parent="Hazards" instance=ExtResource("18_3lka1")]
+[node name="objJumpSwitchSpike2" parent="Hazards" unique_id=926624844 instance=ExtResource("18_3lka1")]
 modulate = Color(1, 1, 1, 0.3137255)
 position = Vector2(752, 528)
 spike_hidden = true
 
-[node name="objJumpSwitchSpike3" parent="Hazards" instance=ExtResource("18_3lka1")]
+[node name="objJumpSwitchSpike3" parent="Hazards" unique_id=869133479 instance=ExtResource("18_3lka1")]
 position = Vector2(720, 400)
 scale = Vector2(1, -1)
 spike_direction = 2
 
-[node name="objJumpSwitchSpike4" parent="Hazards" instance=ExtResource("18_3lka1")]
+[node name="objJumpSwitchSpike4" parent="Hazards" unique_id=282756303 instance=ExtResource("18_3lka1")]
 modulate = Color(1, 1, 1, 0.3137255)
 position = Vector2(752, 400)
 scale = Vector2(1, -1)
 spike_hidden = true
 spike_direction = 2
 
-[node name="Trigger_related" type="Node2D" parent="."]
+[node name="Trigger_related" type="Node2D" parent="." unique_id=4738194]
 
-[node name="objTriggerBlock" parent="Trigger_related" instance=ExtResource("13_iyam4")]
+[node name="objTriggerBlock" parent="Trigger_related" unique_id=1220265375 instance=ExtResource("13_iyam4")]
 position = Vector2(656, 208)
 
-[node name="Line2D" parent="Trigger_related/objTriggerBlock" index="2"]
+[node name="Line2D" parent="Trigger_related/objTriggerBlock" index="2" unique_id=1630843578]
 points = PackedVector2Array(0, 0, 32, 64)
 
-[node name="Target" parent="Trigger_related/objTriggerBlock" index="3"]
+[node name="Target" parent="Trigger_related/objTriggerBlock" index="3" unique_id=440596000]
 position = Vector2(32, 64)
 
-[node name="objTriggerBlock2" parent="Trigger_related" instance=ExtResource("13_iyam4")]
+[node name="objTriggerBlock2" parent="Trigger_related" unique_id=2073148487 instance=ExtResource("13_iyam4")]
 position = Vector2(688, 208)
 
-[node name="Line2D" parent="Trigger_related/objTriggerBlock2" index="2"]
+[node name="Line2D" parent="Trigger_related/objTriggerBlock2" index="2" unique_id=1630843578]
 points = PackedVector2Array(0, 0, 32, 64)
 
-[node name="Target" parent="Trigger_related/objTriggerBlock2" index="3"]
+[node name="Target" parent="Trigger_related/objTriggerBlock2" index="3" unique_id=440596000]
 position = Vector2(32, 64)
 
-[node name="objTriggerBlock3" parent="Trigger_related" instance=ExtResource("13_iyam4")]
+[node name="objTriggerBlock3" parent="Trigger_related" unique_id=1160290645 instance=ExtResource("13_iyam4")]
 position = Vector2(720, 208)
 
-[node name="Line2D" parent="Trigger_related/objTriggerBlock3" index="2"]
+[node name="Line2D" parent="Trigger_related/objTriggerBlock3" index="2" unique_id=1630843578]
 points = PackedVector2Array(0, 0, 0, -32)
 
-[node name="Target" parent="Trigger_related/objTriggerBlock3" index="3"]
+[node name="Target" parent="Trigger_related/objTriggerBlock3" index="3" unique_id=440596000]
 position = Vector2(0, -32)
 
-[node name="objTriggerBlock4" parent="Trigger_related" instance=ExtResource("13_iyam4")]
+[node name="objTriggerBlock4" parent="Trigger_related" unique_id=593236831 instance=ExtResource("13_iyam4")]
 position = Vector2(752, 208)
 
-[node name="Line2D" parent="Trigger_related/objTriggerBlock4" index="2"]
+[node name="Line2D" parent="Trigger_related/objTriggerBlock4" index="2" unique_id=1630843578]
 points = PackedVector2Array(0, 0, 0, -32)
 
-[node name="Target" parent="Trigger_related/objTriggerBlock4" index="3"]
+[node name="Target" parent="Trigger_related/objTriggerBlock4" index="3" unique_id=440596000]
 position = Vector2(0, -32)
 
-[node name="objTrigger" parent="Trigger_related" instance=ExtResource("13_yv60o")]
+[node name="objTrigger" parent="Trigger_related" unique_id=2147139335 instance=ExtResource("13_yv60o")]
 position = Vector2(736, 320)
 trigger_sound = ExtResource("16_vq0hl")
 

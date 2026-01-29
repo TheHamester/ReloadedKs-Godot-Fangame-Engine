@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://disuddxn6h6vm"]
+[gd_scene format=3 uid="uid://disuddxn6h6vm"]
 
 [ext_resource type="Texture2D" uid="uid://mgx6x5nn2vb8" path="res://Graphics/Tilemaps/tilSpikes.png" id="1_sfnk6"]
 
@@ -32,5 +32,5 @@ pattern_0 = SubResource("TileMapPattern_466ks")
 pattern_1 = SubResource("TileMapPattern_yy357")
 pattern_2 = SubResource("TileMapPattern_gvxri")
 
-[node name="tilSpikes" type="TileMapLayer" groups=["Killers"]]
+[node name="tilSpikes" type="TileMapLayer" unique_id=1209795185 groups=["Killers"]]
 tile_set = SubResource("TileSet_5lym1")

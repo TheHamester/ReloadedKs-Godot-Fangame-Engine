@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr8oelp87b8uc"]
+[gd_scene format=3 uid="uid://dr8oelp87b8uc"]
 
 [ext_resource type="Texture2D" uid="uid://d0qu4k1362j4y" path="res://Graphics/Sprites/Gimmicks/sprCoin.png" id="1_1mgnt"]
 [ext_resource type="Script" uid="uid://2upr1t7bo2q" path="res://Scripts/Gimmicks/scrCoin.gd" id="1_vj21q"]
@@ -42,21 +42,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_51hid"]
 radius = 8.0
 
-[node name="objCoin" type="Node2D" groups=["Coins"]]
+[node name="objCoin" type="Node2D" unique_id=279486790 groups=["Coins"]]
 script = ExtResource("1_vj21q")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1704439937]
 sprite_frames = SubResource("SpriteFrames_d7026")
 autoplay = "default"
 frame_progress = 0.0687485
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1063657931]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1646456239]
 shape = SubResource("CircleShape2D_51hid")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2052619531]
 wait_time = 0.6
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyb28r5x5pjdf"]
+[gd_scene format=3 uid="uid://cyb28r5x5pjdf"]
 
 [ext_resource type="Texture2D" uid="uid://caeqoedecr7xt" path="res://Graphics/Sprites/Room_objects/sprSaveBlocker.png" id="1_wltir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7uj8b"]
 size = Vector2(32, 32)
 
-[node name="objPhysicsBlock" type="RigidBody2D"]
+[node name="objPhysicsBlock" type="RigidBody2D" unique_id=1057813851]
 collision_layer = 8194
 collision_mask = 2
 sleeping = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951849343]
 texture = ExtResource("1_wltir")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979293654]
 shape = SubResource("RectangleShape2D_7uj8b")

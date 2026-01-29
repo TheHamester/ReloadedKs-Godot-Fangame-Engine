@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuixijthhxfki"]
+[gd_scene format=3 uid="uid://cuixijthhxfki"]
 
 [ext_resource type="Script" uid="uid://bwjwaqbvothou" path="res://Scripts/Gimmicks/scrJumpRefresher.gd" id="1_e6w2v"]
 [ext_resource type="Texture2D" uid="uid://chu7voxv2wc2g" path="res://Graphics/Sprites/Gimmicks/sprJumpRefresher16.png" id="2_egvfn"]
@@ -7,19 +7,19 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtjew"]
 radius = 8.0
 
-[node name="objJumpRefresher" type="Area2D"]
+[node name="objJumpRefresher" type="Area2D" unique_id=234499247]
 collision_layer = 0
 script = ExtResource("1_e6w2v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449689300]
 texture = ExtResource("2_egvfn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834680802]
 shape = SubResource("CircleShape2D_qtjew")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2028080011]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1905323981]
 emitting = false
 lifetime = 3.0
 speed_scale = 3.0

@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://byy0nyaw6gtki"]
+[gd_scene format=3 uid="uid://byy0nyaw6gtki"]
 
-[ext_resource type="Script" path="res://Scripts/Room_objects/objMusicPlayer.gd" id="1_pxjo1"]
+[ext_resource type="Script" uid="uid://b11ceglytpxe7" path="res://Scripts/Room_objects/objMusicPlayer.gd" id="1_pxjo1"]
 [ext_resource type="Texture2D" uid="uid://cikxmkd3je67u" path="res://Graphics/Sprites/Room_objects/sprPlayMusic.png" id="2_rynqm"]
 
-[node name="objMusicPlayer" type="Node2D"]
+[node name="objMusicPlayer" type="Node2D" unique_id=453920335]
 script = ExtResource("1_pxjo1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1466346742]
 texture = ExtResource("2_rynqm")

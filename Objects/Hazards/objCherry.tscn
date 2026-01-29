@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7jmm47ywcun3"]
+[gd_scene format=3 uid="uid://b7jmm47ywcun3"]
 
 [ext_resource type="Texture2D" uid="uid://bwlyhgiw23fwi" path="res://Graphics/Sprites/Hazards/sprCherry.png" id="1_uvcau"]
 
@@ -26,15 +26,15 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n7u2k"]
 
-[node name="objCherry" type="StaticBody2D" groups=["Killers", "Orbiter"]]
+[node name="objCherry" type="StaticBody2D" unique_id=1707359354 groups=["Killers", "Orbiter"]]
 collision_layer = 8
 collision_mask = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=727055294]
 sprite_frames = SubResource("SpriteFrames_3biuu")
 autoplay = "default"
 frame_progress = 0.63574
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813762959]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_n7u2k")

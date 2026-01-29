@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjgn1pokbuu0p"]
+[gd_scene format=3 uid="uid://cjgn1pokbuu0p"]
 
 [ext_resource type="Texture2D" uid="uid://bukwyfjur2ycm" path="res://Graphics/Backgrounds/bckDefaultGrid.png" id="1_atobg"]
-[ext_resource type="Script" path="res://Scripts/Backgrounds/scrBackgroundScrolling.gd" id="1_w4tvi"]
+[ext_resource type="Script" uid="uid://mc2re0rsny5v" path="res://Scripts/Backgrounds/scrBackgroundScrolling.gd" id="1_w4tvi"]
 
-[node name="objBackgroundScrolling" type="ParallaxBackground"]
+[node name="objBackgroundScrolling" type="ParallaxBackground" unique_id=33050656]
 script = ExtResource("1_w4tvi")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=74376337]
 z_index = -100
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer" unique_id=1680272633]
 offset_right = 64.0
 offset_bottom = 64.0
 texture = ExtResource("1_atobg")

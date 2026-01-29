@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvx8in7r4d7ml"]
+[gd_scene format=3 uid="uid://cvx8in7r4d7ml"]
 
-[ext_resource type="Script" path="res://Scripts/System/scrHUD.gd" id="1_mo0wy"]
+[ext_resource type="Script" uid="uid://crndo41dd8du1" path="res://Scripts/System/scrHUD.gd" id="1_mo0wy"]
 [ext_resource type="FontFile" uid="uid://4m283seugry" path="res://Graphics/Fonts/NFPixels-Regular.otf" id="2_1aw6v"]
 [ext_resource type="Texture2D" uid="uid://cs7d7k2kmj13y" path="res://Graphics/Sprites/Collectables/sprSecretItem.png" id="3_2my7r"]
 [ext_resource type="Texture2D" uid="uid://dd3vx3fvdxdrh" path="res://Graphics/Sprites/Player/sprPlayerIdle.png" id="3_ncdqv"]
 
-[node name="objHUD" type="Control"]
+[node name="objHUD" type="Control" unique_id=1946218882]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mo0wy")
 
-[node name="Display" type="CanvasLayer" parent="."]
+[node name="Display" type="CanvasLayer" parent="." unique_id=81088560]
 
-[node name="MarginContainer" type="MarginContainer" parent="Display"]
+[node name="MarginContainer" type="MarginContainer" parent="Display" unique_id=499532136]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -24,18 +24,18 @@ grow_horizontal = 0
 pivot_offset = Vector2(184, 0)
 theme_override_constants/margin_top = 0
 
-[node name="Panel" type="Panel" parent="Display/MarginContainer"]
+[node name="Panel" type="Panel" parent="Display/MarginContainer" unique_id=834062503]
 custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.73
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Display/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Display/MarginContainer" unique_id=841149831]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="textDebug1" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug1" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=1992627052]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_1aw6v")
@@ -43,35 +43,35 @@ theme_override_font_sizes/font_size = 20
 text = "Player X"
 horizontal_alignment = 2
 
-[node name="textDebug2" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug2" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=2129613742]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
 theme_override_font_sizes/font_size = 20
 text = "Player Y"
 horizontal_alignment = 2
 
-[node name="textDebug3" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug3" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=1917852694]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
 theme_override_font_sizes/font_size = 20
 text = "FPS"
 horizontal_alignment = 2
 
-[node name="textDebug4" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug4" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=1346158726]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
 theme_override_font_sizes/font_size = 20
 text = "Room Name"
 horizontal_alignment = 2
 
-[node name="textDebug5" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug5" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=1201090204]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
 theme_override_font_sizes/font_size = 20
 text = "[\\]: Show More"
 horizontal_alignment = 2
 
-[node name="textDebug6" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug6" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=748655146]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
@@ -79,7 +79,7 @@ theme_override_font_sizes/font_size = 20
 text = "[1] Godmode"
 horizontal_alignment = 2
 
-[node name="textDebug7" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug7" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=694846116]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
@@ -87,7 +87,7 @@ theme_override_font_sizes/font_size = 20
 text = "[2] Inf Jump"
 horizontal_alignment = 2
 
-[node name="textDebug8" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug8" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=523313461]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
@@ -95,7 +95,7 @@ theme_override_font_sizes/font_size = 20
 text = "[3] Hitbox"
 horizontal_alignment = 2
 
-[node name="textDebug9" type="Label" parent="Display/MarginContainer/VBoxContainer"]
+[node name="textDebug9" type="Label" parent="Display/MarginContainer/VBoxContainer" unique_id=916799438]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1aw6v")
@@ -103,7 +103,7 @@ theme_override_font_sizes/font_size = 20
 text = "[4] Save"
 horizontal_alignment = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="Display"]
+[node name="MarginContainer2" type="MarginContainer" parent="Display" unique_id=69631421]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -114,14 +114,14 @@ offset_bottom = -8.0
 grow_vertical = 0
 pivot_offset = Vector2(0, 64)
 
-[node name="Panel" type="Panel" parent="Display/MarginContainer2"]
+[node name="Panel" type="Panel" parent="Display/MarginContainer2" unique_id=1742541585]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Display/MarginContainer2/Panel"]
+[node name="Sprite2D" type="Sprite2D" parent="Display/MarginContainer2/Panel" unique_id=1061027282]
 position = Vector2(24, 32)
 texture = ExtResource("3_2my7r")
 
-[node name="Label" type="Label" parent="Display/MarginContainer2/Panel"]
+[node name="Label" type="Label" parent="Display/MarginContainer2/Panel" unique_id=180926689]
 layout_mode = 0
 offset_left = 48.0
 offset_right = 192.0
@@ -135,12 +135,12 @@ vertical_alignment = 1
 autowrap_mode = 2
 clip_text = true
 
-[node name="Timer" type="Timer" parent="Display/MarginContainer2"]
+[node name="Timer" type="Timer" parent="Display/MarginContainer2" unique_id=1809036042]
 process_callback = 0
 wait_time = 5.0
 one_shot = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085618610]
 modulate = Color(1, 1, 1, 0.392157)
 z_index = 100
 texture = ExtResource("3_ncdqv")

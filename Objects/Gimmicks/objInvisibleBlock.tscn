@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://blj3cyjlb8uil"]
+[gd_scene format=3 uid="uid://blj3cyjlb8uil"]
 
 [ext_resource type="Texture2D" uid="uid://8f26yn08j41a" path="res://Graphics/Sprites/Gimmicks/sprMovingBlock.png" id="1_vwmp4"]
 [ext_resource type="Script" uid="uid://citic5403gdea" path="res://Scripts/Gimmicks/scrInvisibleBlock.gd" id="1_wv0ev"]
@@ -9,22 +9,22 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8leh"]
 size = Vector2(32, 32)
 
-[node name="objInvisibleBlock" type="StaticBody2D"]
+[node name="objInvisibleBlock" type="StaticBody2D" unique_id=1597765726]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_wv0ev")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=291841321]
 texture = ExtResource("1_vwmp4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1166110632]
 shape = SubResource("RectangleShape2D_6y0rf")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1270479362]
 collision_layer = 0
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186066011]
 z_index = -1
 shape = SubResource("RectangleShape2D_c8leh")
 debug_color = Color(1, 0.00784314, 0.0509804, 0.419608)

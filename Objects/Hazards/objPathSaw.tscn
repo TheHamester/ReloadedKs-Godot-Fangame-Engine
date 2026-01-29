@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://crntpqtd5vguo"]
+[gd_scene format=3 uid="uid://crntpqtd5vguo"]
 
 [ext_resource type="Texture2D" uid="uid://das8fqivyehrc" path="res://Graphics/Sprites/Hazards/sprPathSaw.png" id="1_d71kf"]
 [ext_resource type="Script" uid="uid://0jai57ayg7k" path="res://Scripts/Hazards/scrPathSaw.gd" id="1_v1ibi"]
@@ -28,32 +28,32 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6oej8"]
 radius = 32.0
 
-[node name="objPathSaw" type="Path2D"]
+[node name="objPathSaw" type="Path2D" unique_id=8562293]
 editor_description = "1) Create curve
 2) Add curve points
 3) Set progress speed
 4) Can also loop, or visualize the path with drawn lines"
 script = ExtResource("1_v1ibi")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=833963624]
 rotates = false
 loop = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D" unique_id=2082144999]
 collision_layer = 8
 collision_mask = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/StaticBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/StaticBody2D" unique_id=1725871876]
 sprite_frames = SubResource("SpriteFrames_lqsic")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/StaticBody2D" unique_id=1294956601]
 shape = SubResource("CircleShape2D_6oej8")
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visuals" type="Node2D" parent="." unique_id=2109688345]
 z_index = -1
 
-[node name="Line2D" type="Line2D" parent="Visuals"]
+[node name="Line2D" type="Line2D" parent="Visuals" unique_id=1929827655]
 visible = false
 width = 8.0
 default_color = Color(0, 0, 0, 1)
@@ -61,7 +61,7 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D2" type="Line2D" parent="Visuals"]
+[node name="Line2D2" type="Line2D" parent="Visuals" unique_id=1861818421]
 visible = false
 width = 4.0
 joint_mode = 2

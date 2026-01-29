@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvv6rb061ptd4"]
+[gd_scene format=3 uid="uid://dvv6rb061ptd4"]
 
 [ext_resource type="Texture2D" uid="uid://dm2u47lskfns7" path="res://Graphics/Tilemaps/tilConveyor.png" id="1_bcndo"]
 
@@ -18,7 +18,7 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_u47ch")
 
-[node name="tilConveyorBlock" type="TileMapLayer"]
+[node name="tilConveyorBlock" type="TileMapLayer" unique_id=1467677897]
 editor_description = "To change speed, go to the TileSet properties, Select tab and inside of Physics, Physics Layer 0 check the \"Linear Velocity\" property"
 tile_set = SubResource("TileSet_gu720")
 rendering_quadrant_size = 32

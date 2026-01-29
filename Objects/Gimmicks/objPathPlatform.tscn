@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgil2h52ck8tq"]
+[gd_scene format=3 uid="uid://cgil2h52ck8tq"]
 
 [ext_resource type="Script" uid="uid://diwwvorfg7o3o" path="res://Scripts/Gimmicks/scrPathPlatform.gd" id="1_dutk4"]
 [ext_resource type="Script" uid="uid://ba00ni5ikjhx2" path="res://Scripts/Gimmicks/scrMovingPlatform.gd" id="2_4d0nl"]
@@ -7,40 +7,40 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d0nl"]
 size = Vector2(32, 16)
 
-[node name="objPathPlatform" type="Path2D"]
+[node name="objPathPlatform" type="Path2D" unique_id=1682879749]
 editor_description = "1) Create curve
 2) Add curve points
 3) Set progress speed
 4) Can also loop, or visualize the path with drawn lines"
 script = ExtResource("1_dutk4")
 
-[node name="objMovingPlatform" type="AnimatableBody2D" parent="."]
+[node name="objMovingPlatform" type="AnimatableBody2D" parent="." unique_id=2080378303]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_4d0nl")
 
-[node name="Sprite2D" type="Sprite2D" parent="objMovingPlatform"]
+[node name="Sprite2D" type="Sprite2D" parent="objMovingPlatform" unique_id=819498732]
 position = Vector2(0, 8)
 texture = ExtResource("2_dutk4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="objMovingPlatform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objMovingPlatform" unique_id=245706443]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_4d0nl")
 one_way_collision = true
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=913682375]
 rotates = false
 loop = false
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=1162589609]
 remote_path = NodePath("../../objMovingPlatform")
 update_rotation = false
 update_scale = false
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visuals" type="Node2D" parent="." unique_id=1507050903]
 z_index = -1
 
-[node name="Line2D" type="Line2D" parent="Visuals"]
+[node name="Line2D" type="Line2D" parent="Visuals" unique_id=145792813]
 visible = false
 width = 4.0
 default_color = Color(0, 0, 0, 1)
@@ -48,7 +48,7 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D2" type="Line2D" parent="Visuals"]
+[node name="Line2D2" type="Line2D" parent="Visuals" unique_id=1344190054]
 visible = false
 width = 2.0
 joint_mode = 2

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dihcyhsflfr2g"]
+[gd_scene format=3 uid="uid://dihcyhsflfr2g"]
 
-[ext_resource type="Shader" path="res://Scripts/Shaders/shScrollMotion.gdshader" id="1_ainbh"]
+[ext_resource type="Shader" uid="uid://6icwvxsqoqnu" path="res://Scripts/Shaders/shScrollMotion.gdshader" id="1_ainbh"]
 [ext_resource type="Texture2D" uid="uid://dlit77pi2a0te" path="res://Graphics/Backgrounds/bckPixelStarfield.png" id="2_1odoo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b4k22"]
@@ -9,14 +9,14 @@ shader_parameter/motion = Vector2(80, 0)
 shader_parameter/scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
 
-[node name="objBackgroundMenus" type="Node2D"]
+[node name="objBackgroundMenus" type="Node2D" unique_id=213819543]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=505233786]
 offset_right = 800.0
 offset_bottom = 608.0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=500211089]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_b4k22")
 offset_right = 800.0

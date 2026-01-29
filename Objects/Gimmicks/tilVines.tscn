@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvoglwrd5xiy4"]
+[gd_scene format=3 uid="uid://dvoglwrd5xiy4"]
 
 [ext_resource type="Texture2D" uid="uid://d3112lxt00kp1" path="res://Graphics/Tilemaps/tilVines.png" id="1_ni63k"]
 
@@ -20,5 +20,5 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_xlb3n")
 pattern_0 = SubResource("TileMapPattern_875dh")
 
-[node name="tilVines" type="TileMapLayer" groups=["Vines"]]
+[node name="tilVines" type="TileMapLayer" unique_id=1283086812 groups=["Vines"]]
 tile_set = SubResource("TileSet_nh710")

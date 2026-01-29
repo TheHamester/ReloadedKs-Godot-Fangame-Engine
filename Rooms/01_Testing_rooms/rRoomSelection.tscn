@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bvcymmq3uy3af"]
+[gd_scene format=4 uid="uid://bvcymmq3uy3af"]
 
 [ext_resource type="PackedScene" uid="uid://byy0nyaw6gtki" path="res://Objects/Room_objects/objMusicPlayer.tscn" id="1_h61di"]
 [ext_resource type="AudioStream" uid="uid://cbtxeavsqivpn" path="res://Audio/Music/musLevel01.ogg" id="2_udbsw"]
@@ -12,34 +12,34 @@
 [ext_resource type="PackedScene" uid="uid://bo3vrmvp7ayf8" path="res://Objects/Room_objects/objWarp.tscn" id="8_k8bft"]
 [ext_resource type="FontFile" uid="uid://4m283seugry" path="res://Graphics/Fonts/NFPixels-Regular.otf" id="9_3lttj"]
 
-[node name="rRoomSelection" type="Node2D"]
+[node name="rRoomSelection" type="Node2D" unique_id=1347877626]
 
-[node name="Environment" type="Node2D" parent="."]
+[node name="Environment" type="Node2D" parent="." unique_id=1617971299]
 
-[node name="objMusicPlayer" parent="Environment" instance=ExtResource("1_h61di")]
+[node name="objMusicPlayer" parent="Environment" unique_id=1666361890 instance=ExtResource("1_h61di")]
 position = Vector2(-16, 16)
 song_id = ExtResource("2_udbsw")
 
-[node name="til32x32" parent="Environment" instance=ExtResource("3_8wqnp")]
+[node name="til32x32" parent="Environment" unique_id=882445369 instance=ExtResource("3_8wqnp")]
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAAAAAcAAAABAAEAAAAAAAgAAAABAAEAAAAAAAkAAAABAAEAAAAAAAoAAAABAAEAAAAAAAsAAAABAAEAAAAAAAwAAAABAAEAAAAAAA0AAAABAAEAAAAAAA4AAAABAAEAAAAAAA8AAAABAAEAAAAAABAAAAABAAEAAAAAABEAAAABAAEAAAAAABIAAAABAAEAAAABAAAAAAABAAEAAAABABEAAAAAAAEAAAABABIAAAABAAEAAAACAAAAAAABAAEAAAACABEAAAAAAAEAAAACABIAAAABAAEAAAADAAAAAAABAAEAAAADAAgAAAAAAAEAAAADAAkAAAABAAEAAAADAA4AAAAAAAEAAAADAA8AAAABAAEAAAADABEAAAAAAAEAAAADABIAAAABAAEAAAAEAAAAAAABAAEAAAAEAAgAAAAAAAEAAAAEAAkAAAABAAEAAAAEAA4AAAAAAAEAAAAEAA8AAAABAAEAAAAEABEAAAAAAAEAAAAEABIAAAABAAEAAAAFAAAAAAABAAEAAAAFAAgAAAAAAAEAAAAFAAkAAAABAAEAAAAFAA4AAAAAAAEAAAAFAA8AAAABAAEAAAAFABEAAAAAAAEAAAAFABIAAAABAAEAAAAGAAAAAAABAAEAAAAGAAgAAAAAAAEAAAAGAAkAAAABAAEAAAAGAA4AAAAAAAEAAAAGAA8AAAABAAEAAAAGABEAAAAAAAEAAAAGABIAAAABAAEAAAAHAAAAAAABAAEAAAAHAAgAAAAAAAEAAAAHAAkAAAABAAEAAAAHAA4AAAAAAAEAAAAHAA8AAAABAAEAAAAHABEAAAAAAAEAAAAHABIAAAABAAEAAAAIAAAAAAABAAEAAAAIABEAAAAAAAEAAAAIABIAAAABAAEAAAAJAAAAAAABAAEAAAAJAAUAAAAAAAEAAAAJAAYAAAABAAEAAAAJAAsAAAAAAAEAAAAJAAwAAAABAAEAAAAJABEAAAAAAAEAAAAJABIAAAABAAEAAAAKAAAAAAABAAEAAAAKAAUAAAAAAAEAAAAKAAYAAAABAAEAAAAKAAsAAAAAAAEAAAAKAAwAAAABAAEAAAAKABEAAAAAAAEAAAAKABIAAAABAAEAAAALAAAAAAABAAEAAAALAAUAAAAAAAEAAAALAAYAAAABAAEAAAALAAsAAAAAAAEAAAALAAwAAAABAAEAAAALABEAAAAAAAEAAAALABIAAAABAAEAAAAMAAAAAAABAAEAAAAMAAUAAAAAAAEAAAAMAAYAAAABAAEAAAAMAAsAAAAAAAEAAAAMAAwAAAABAAEAAAAMABEAAAAAAAEAAAAMABIAAAABAAEAAAANAAAAAAABAAEAAAANAAUAAAAAAAEAAAANAAYAAAABAAEAAAANAAsAAAAAAAEAAAANAAwAAAABAAEAAAANABEAAAAAAAEAAAANABIAAAABAAEAAAAOAAAAAAABAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAABAAEAAAAOAAsAAAAAAAEAAAAOAAwAAAABAAEAAAAOABEAAAAAAAEAAAAOABIAAAABAAEAAAAPAAAAAAABAAEAAAAPAAUAAAAAAAEAAAAPAAYAAAABAAEAAAAPAAsAAAAAAAEAAAAPAAwAAAABAAEAAAAPABEAAAAAAAEAAAAPABIAAAABAAEAAAAQAAAAAAABAAEAAAAQABEAAAAAAAEAAAAQABIAAAABAAEAAAARAAAAAAABAAEAAAARAAgAAAAAAAEAAAARAAkAAAABAAEAAAARAA4AAAAAAAEAAAARAA8AAAABAAEAAAARABEAAAAAAAEAAAARABIAAAABAAEAAAASAAAAAAABAAEAAAASAAgAAAAAAAEAAAASAAkAAAABAAEAAAASAA4AAAAAAAEAAAASAA8AAAABAAEAAAASABEAAAAAAAEAAAASABIAAAABAAEAAAATAAAAAAABAAEAAAATAAgAAAAAAAEAAAATAAkAAAABAAEAAAATAA4AAAAAAAEAAAATAA8AAAABAAEAAAATABEAAAAAAAEAAAATABIAAAABAAEAAAAUAAAAAAABAAEAAAAUAAgAAAAAAAEAAAAUAAkAAAABAAEAAAAUAA4AAAAAAAEAAAAUAA8AAAABAAEAAAAUABEAAAAAAAEAAAAUABIAAAABAAEAAAAVAAAAAAABAAEAAAAVAAgAAAAAAAEAAAAVAAkAAAABAAEAAAAVAA4AAAAAAAEAAAAVAA8AAAABAAEAAAAVABEAAAAAAAEAAAAVABIAAAABAAEAAAAWAAAAAAABAAEAAAAWABEAAAAAAAEAAAAWABIAAAABAAEAAAAXAAAAAAABAAEAAAAXABEAAAAAAAEAAAAXABIAAAABAAEAAAAYAAAAAAABAAEAAAAYAAEAAAABAAEAAAAYAAIAAAABAAEAAAAYAAMAAAABAAEAAAAYAAQAAAABAAEAAAAYAAUAAAABAAEAAAAYAAYAAAABAAEAAAAYAAcAAAABAAEAAAAYAAgAAAABAAEAAAAYAAkAAAABAAEAAAAYAAoAAAABAAEAAAAYAAsAAAABAAEAAAAYAAwAAAABAAEAAAAYAA0AAAABAAEAAAAYAA4AAAABAAEAAAAYAA8AAAABAAEAAAAYABAAAAABAAEAAAAYABEAAAABAAEAAAAYABIAAAABAAEAAAA=")
 
-[node name="objBackgroundTexture" parent="Environment" instance=ExtResource("4_fbekd")]
+[node name="objBackgroundTexture" parent="Environment" unique_id=1207774309 instance=ExtResource("4_fbekd")]
 self_modulate = Color(1, 1, 1, 0.470588)
 offset_right = 1600.0
 offset_bottom = 1216.0
 scale = Vector2(0.5, 0.5)
 metadata/_edit_lock_ = true
 
-[node name="objBackgroundScrolling" parent="Environment" instance=ExtResource("5_5652x")]
+[node name="objBackgroundScrolling" parent="Environment" unique_id=779619232 instance=ExtResource("5_5652x")]
 background_size = Vector2(200, 200)
 background_index = ExtResource("6_4eqva")
 
-[node name="Room_related" type="Node2D" parent="."]
+[node name="Room_related" type="Node2D" parent="." unique_id=578692560]
 
-[node name="objPlayer" parent="Room_related" instance=ExtResource("7_5rhr1")]
+[node name="objPlayer" parent="Room_related" unique_id=1892670387 instance=ExtResource("7_5rhr1")]
 position = Vector2(400, 144)
 
-[node name="objCameraDynamic" parent="Room_related" node_paths=PackedStringArray("target_node") instance=ExtResource("6_h5c02")]
+[node name="objCameraDynamic" parent="Room_related" unique_id=1579906534 node_paths=PackedStringArray("target_node") instance=ExtResource("6_h5c02")]
 position = Vector2(-16, 48)
 target_node = NodePath("../objPlayer")
 stop_left_at = 0
@@ -47,15 +47,15 @@ stop_up_at = 0
 stop_right_at = 800
 stop_down_at = 608
 
-[node name="objSavePoint" parent="Room_related" instance=ExtResource("7_cvscx")]
+[node name="objSavePoint" parent="Room_related" unique_id=2102403057 instance=ExtResource("7_cvscx")]
 position = Vector2(400, 112)
 
-[node name="objWarp" parent="Room_related" instance=ExtResource("8_k8bft")]
+[node name="objWarp" parent="Room_related" unique_id=1005070908 instance=ExtResource("8_k8bft")]
 z_index = 1
 position = Vector2(176, 240)
 warp_to = "res://Rooms/01_Testing_rooms/rTestRoom01.tscn"
 
-[node name="Label" type="Label" parent="Room_related/objWarp"]
+[node name="Label" type="Label" parent="Room_related/objWarp" unique_id=1096936750]
 offset_left = -80.0
 offset_top = -48.0
 offset_right = 80.0
@@ -69,11 +69,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="objWarp2" parent="Room_related" instance=ExtResource("8_k8bft")]
+[node name="objWarp2" parent="Room_related" unique_id=181369271 instance=ExtResource("8_k8bft")]
 position = Vector2(400, 336)
 warp_to = "res://Rooms/01_Testing_rooms/rTestRoom02.tscn"
 
-[node name="Label2" type="Label" parent="Room_related/objWarp2"]
+[node name="Label2" type="Label" parent="Room_related/objWarp2" unique_id=6113883]
 offset_left = -80.0
 offset_top = -48.0
 offset_right = 80.0
@@ -87,11 +87,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="objWarp3" parent="Room_related" instance=ExtResource("8_k8bft")]
+[node name="objWarp3" parent="Room_related" unique_id=917574600 instance=ExtResource("8_k8bft")]
 position = Vector2(624, 240)
 warp_to = "res://Rooms/01_Testing_rooms/rTestRoom03.tscn"
 
-[node name="Label3" type="Label" parent="Room_related/objWarp3"]
+[node name="Label3" type="Label" parent="Room_related/objWarp3" unique_id=1593773939]
 offset_left = -80.0
 offset_top = -48.0
 offset_right = 80.0
@@ -105,11 +105,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="objWarp4" parent="Room_related" instance=ExtResource("8_k8bft")]
+[node name="objWarp4" parent="Room_related" unique_id=290666845 instance=ExtResource("8_k8bft")]
 position = Vector2(176, 432)
 warp_to = "res://Rooms/01_Testing_rooms/rTestRoom04.tscn"
 
-[node name="Label4" type="Label" parent="Room_related/objWarp4"]
+[node name="Label4" type="Label" parent="Room_related/objWarp4" unique_id=1054232472]
 offset_left = -80.0
 offset_top = -48.0
 offset_right = 80.0
@@ -123,11 +123,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="objWarp5" parent="Room_related" instance=ExtResource("8_k8bft")]
+[node name="objWarp5" parent="Room_related" unique_id=904555846 instance=ExtResource("8_k8bft")]
 position = Vector2(624, 432)
 warp_to = "uid://cqqjt5aa6vthb"
 
-[node name="Label5" type="Label" parent="Room_related/objWarp5"]
+[node name="Label5" type="Label" parent="Room_related/objWarp5" unique_id=373187538]
 offset_left = -80.0
 offset_top = -48.0
 offset_right = 80.0

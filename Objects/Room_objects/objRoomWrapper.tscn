@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgkc2wa215fx5"]
+[gd_scene format=3 uid="uid://cgkc2wa215fx5"]
 
 [ext_resource type="Script" uid="uid://b4eshrw4xae6c" path="res://Scripts/Room_objects/scrRoomWrapper.gd" id="1_hnyvi"]
 
-[node name="objRoomWrapper" type="Polygon2D"]
+[node name="objRoomWrapper" type="Polygon2D" unique_id=456266249]
 color = Color(1, 0.40392157, 0.19607843, 0.49803922)
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 script = ExtResource("1_hnyvi")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1726512286]
 collision_layer = 0
 monitorable = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1822608701]
 visible = false
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 

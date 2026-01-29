@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://wci4yejtx846"]
+[gd_scene format=3 uid="uid://wci4yejtx846"]
 
 [ext_resource type="Script" uid="uid://b3wylk026rft1" path="res://Scripts/Player/scrBullet.gd" id="1_uc8l6"]
 [ext_resource type="Texture2D" uid="uid://bteupcijpek7k" path="res://Graphics/Sprites/Player/sprBullet.png" id="2_e32hu"]
@@ -28,23 +28,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dk02j"]
 size = Vector2(4, 4)
 
-[node name="objBullet" type="AnimatableBody2D" groups=["Bullet"]]
+[node name="objBullet" type="AnimatableBody2D" unique_id=1346830763 groups=["Bullet"]]
 z_index = 1
 collision_layer = 16
 collision_mask = 34
 sync_to_physics = false
 script = ExtResource("1_uc8l6")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1025237520]
 sprite_frames = SubResource("SpriteFrames_f2nkx")
 autoplay = "default"
 frame_progress = 0.887801
 speed_scale = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625367197]
 shape = SubResource("RectangleShape2D_dk02j")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1186453490]
 wait_time = 0.9
 one_shot = true
 autostart = true

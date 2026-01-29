@@ -1,32 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://v76rkjcj1yms"]
+[gd_scene format=3 uid="uid://v76rkjcj1yms"]
 
 [ext_resource type="Script" uid="uid://cljc0jl8yswhk" path="res://Scripts/Globals/scrSoundManager.gd" id="1_5balp"]
 
-[node name="objSoundManager" type="Node"]
+[node name="objSoundManager" type="Node" unique_id=1298665550]
 script = ExtResource("1_5balp")
 
-[node name="audioPlayerList" type="Node" parent="."]
+[node name="audioPlayerList" type="Node" parent="." unique_id=2065910998]
 
-[node name="1" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="1" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=178876175]
 bus = &"Sounds"
 
-[node name="2" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="2" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=269345204]
 bus = &"Sounds"
 
-[node name="3" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="3" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=701125746]
 bus = &"Sounds"
 
-[node name="4" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="4" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=27125214]
 bus = &"Sounds"
 
-[node name="5" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="5" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=196298555]
 bus = &"Sounds"
 
-[node name="6" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="6" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=614179623]
 bus = &"Sounds"
 
-[node name="7" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="7" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=710908439]
 bus = &"Sounds"
 
-[node name="8" type="AudioStreamPlayer" parent="audioPlayerList"]
+[node name="8" type="AudioStreamPlayer" parent="audioPlayerList" unique_id=1073691883]
 bus = &"Sounds"

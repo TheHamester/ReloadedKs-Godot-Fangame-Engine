@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb8vjlr6lfill"]
+[gd_scene format=3 uid="uid://cb8vjlr6lfill"]
 
-[ext_resource type="Script" path="res://Scripts/UI/scrMenuButtonControls.gd" id="1_3e1aj"]
+[ext_resource type="Script" uid="uid://680lnsss36a8" path="res://Scripts/UI/scrMenuButtonControls.gd" id="1_3e1aj"]
 [ext_resource type="FontFile" uid="uid://4m283seugry" path="res://Graphics/Fonts/NFPixels-Regular.otf" id="2_0xj0x"]
 
-[node name="objMenuButtonControls" type="TextureButton"]
+[node name="objMenuButtonControls" type="TextureButton" unique_id=403819541]
 offset_left = -44.0
 offset_top = -18.0
 offset_right = 44.0
@@ -14,7 +14,7 @@ action_mode = 0
 button_mask = 0
 script = ExtResource("1_3e1aj")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1911999943]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

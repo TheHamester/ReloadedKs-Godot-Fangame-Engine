@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu54hxafh2i6t"]
+[gd_scene format=3 uid="uid://cu54hxafh2i6t"]
 
 [ext_resource type="Script" uid="uid://dccye8p4551tm" path="res://Scripts/Room_objects/scrSignProximity.gd" id="1_8wc6x"]
 [ext_resource type="Texture2D" uid="uid://ox7qqy44wanl" path="res://Graphics/Sprites/Dialog_system/sprSign.png" id="2_knnk8"]
@@ -8,7 +8,7 @@
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[node name="objSignProximity" type="Area2D"]
+[node name="objSignProximity" type="Area2D" unique_id=1651540284]
 editor_description = "1) Place in room
 2) Change sign text
 3) Right click -> Make Local
@@ -17,15 +17,15 @@ collision_layer = 0
 monitorable = false
 script = ExtResource("1_8wc6x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911374141]
 z_index = -1
 shape = SubResource("RectangleShape2D_gjj3h")
 debug_color = Color(0, 0.6, 0.7019608, 0.19607843)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1450569333]
 texture = ExtResource("2_knnk8")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=906679267]
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5

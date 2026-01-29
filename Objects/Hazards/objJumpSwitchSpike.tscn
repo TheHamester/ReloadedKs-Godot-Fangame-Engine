@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://chskqaeqby1wj"]
+[gd_scene format=3 uid="uid://chskqaeqby1wj"]
 
 [ext_resource type="Script" uid="uid://wgdwxtr4c5bn" path="res://Scripts/Hazards/scrJumpSwitchSpike.gd" id="1_806r3"]
 [ext_resource type="Texture2D" uid="uid://cigf5frmkx05w" path="res://Graphics/Sprites/Hazards/sprSpikeUp.png" id="1_m5jm3"]
 
-[node name="objJumpSwitchSpike" type="AnimatableBody2D"]
+[node name="objJumpSwitchSpike" type="AnimatableBody2D" unique_id=2045191833]
 z_index = -1
 collision_layer = 8
 collision_mask = 0
 sync_to_physics = false
 script = ExtResource("1_806r3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1506491311]
 texture = ExtResource("1_m5jm3")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1978529083]
 polygon = PackedVector2Array(0, -16, 16, 16, -16, 16)

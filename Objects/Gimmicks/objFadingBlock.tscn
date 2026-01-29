@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjqr3qh2x6l67"]
+[gd_scene format=3 uid="uid://cjqr3qh2x6l67"]
 
 [ext_resource type="Script" uid="uid://dxt8vd1aeab1g" path="res://Scripts/Gimmicks/scrFadingBlock.gd" id="1_0ydmg"]
 [ext_resource type="Texture2D" uid="uid://ce6up10x0wqqg" path="res://Graphics/Sprites/Gimmicks/sprFadingBlock.png" id="1_suvai"]
@@ -9,37 +9,37 @@ size = Vector2(34, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37oh6"]
 size = Vector2(32, 32)
 
-[node name="objFadingBlock" type="StaticBody2D"]
+[node name="objFadingBlock" type="StaticBody2D" unique_id=1132704055]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_0ydmg")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1365820227]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1554062539]
 z_index = -1
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_ylcf1")
 debug_color = Color(1, 0.00784314, 0.0509804, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=707425025]
 texture = ExtResource("1_suvai")
 centered = false
 hframes = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2119078166]
 z_index = -1
 texture = ExtResource("1_suvai")
 centered = false
 hframes = 2
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1265301923]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_37oh6")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1912369268]
 process_callback = 0
 one_shot = true
 

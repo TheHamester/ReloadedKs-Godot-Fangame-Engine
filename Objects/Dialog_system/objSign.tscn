@@ -1,24 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2676jrukcata"]
+[gd_scene format=3 uid="uid://d2676jrukcata"]
 
-[ext_resource type="Script" path="res://Scripts/Dialog_system/scrSign.gd" id="1_2joc5"]
+[ext_resource type="Script" uid="uid://b82w4aonkvk7t" path="res://Scripts/Dialog_system/scrSign.gd" id="1_2joc5"]
 [ext_resource type="Texture2D" uid="uid://ox7qqy44wanl" path="res://Graphics/Sprites/Dialog_system/sprSign.png" id="1_86i65"]
 [ext_resource type="FontFile" uid="uid://4m283seugry" path="res://Graphics/Fonts/NFPixels-Regular.otf" id="3_dg8qb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt1lf"]
 size = Vector2(32, 32)
 
-[node name="objSign" type="Area2D"]
+[node name="objSign" type="Area2D" unique_id=804556431]
 collision_layer = 0
 script = ExtResource("1_2joc5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1053736321]
 z_index = 1
 texture = ExtResource("1_86i65")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370342789]
 shape = SubResource("RectangleShape2D_tt1lf")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=932831510]
 visible = false
 offset_left = -56.0
 offset_top = -48.0

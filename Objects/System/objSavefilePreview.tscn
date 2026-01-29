@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm671n4cnmoon"]
+[gd_scene format=3 uid="uid://bm671n4cnmoon"]
 
 [ext_resource type="Texture2D" uid="uid://cjghfmo17k80l" path="res://Graphics/Sprites/System/sprSaveFile.png" id="1_6vun7"]
-[ext_resource type="Script" path="res://Scripts/System/scrSavefilePreview.gd" id="1_22f13"]
+[ext_resource type="Script" uid="uid://dsjqlb5w0oy6g" path="res://Scripts/System/scrSavefilePreview.gd" id="1_22f13"]
 
-[node name="objSavefilePreview" type="Node2D"]
+[node name="objSavefilePreview" type="Node2D" unique_id=1388255666]
 script = ExtResource("1_22f13")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1781613740]
 texture = ExtResource("1_6vun7")

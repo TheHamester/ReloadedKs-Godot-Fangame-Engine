@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfsk4gr8ei4ul"]
+[gd_scene format=3 uid="uid://bfsk4gr8ei4ul"]
 
 [ext_resource type="Texture2D" uid="uid://cbrcmk1mftmth" path="res://Graphics/Tilemaps/tilChainLinkFence.png" id="1_32qol"]
 
@@ -38,7 +38,7 @@ physics_layer_0/collision_layer = 2048
 physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_puxt1")
 
-[node name="tilClimbSurface" type="TileMapLayer"]
+[node name="tilClimbSurface" type="TileMapLayer" unique_id=1098109671]
 z_index = -1
 tile_set = SubResource("TileSet_l4v38")
 physics_quadrant_size = 32

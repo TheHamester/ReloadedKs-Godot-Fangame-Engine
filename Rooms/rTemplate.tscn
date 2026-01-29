@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo0yb0dkqtcdt"]
+[gd_scene format=3 uid="uid://bo0yb0dkqtcdt"]
 
 [ext_resource type="PackedScene" uid="uid://byy0nyaw6gtki" path="res://Objects/Room_objects/objMusicPlayer.tscn" id="1_rc3xc"]
 [ext_resource type="PackedScene" uid="uid://yab7pya0yr1j" path="res://Objects/Room_objects/objCameraFixed.tscn" id="2_757wq"]
@@ -6,28 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://cinj525l66hoo" path="res://Objects/Player/objPlayer.tscn" id="3_g4msc"]
 [ext_resource type="PackedScene" uid="uid://disuddxn6h6vm" path="res://Objects/Hazards/tilSpikes.tscn" id="5_a4uqv"]
 
-[node name="rTemplate" type="Node2D"]
+[node name="rTemplate" type="Node2D" unique_id=857169192]
 
-[node name="Environment" type="Node2D" parent="."]
+[node name="Environment" type="Node2D" parent="." unique_id=1055363103]
 
-[node name="objMusicPlayer" parent="Environment" instance=ExtResource("1_rc3xc")]
+[node name="objMusicPlayer" parent="Environment" unique_id=1013450632 instance=ExtResource("1_rc3xc")]
 position = Vector2(-16, 16)
 
-[node name="til32x32" parent="Environment" instance=ExtResource("2_g4msc")]
+[node name="til32x32" parent="Environment" unique_id=2128410256 instance=ExtResource("2_g4msc")]
 
-[node name="Room_related" type="Node2D" parent="."]
+[node name="Room_related" type="Node2D" parent="." unique_id=524669499]
 
-[node name="objPlayer" parent="Room_related" instance=ExtResource("3_g4msc")]
+[node name="objPlayer" parent="Room_related" unique_id=584378172 instance=ExtResource("3_g4msc")]
 position = Vector2(16, 16)
 
-[node name="objCameraFixed" parent="Room_related" node_paths=PackedStringArray("target_node") instance=ExtResource("2_757wq")]
+[node name="objCameraFixed" parent="Room_related" unique_id=1343713258 node_paths=PackedStringArray("target_node") instance=ExtResource("2_757wq")]
 position = Vector2(-16, 48)
 target_node = NodePath("../objPlayer")
 
-[node name="Gimmicks" type="Node2D" parent="."]
+[node name="Gimmicks" type="Node2D" parent="." unique_id=1025430005]
 
-[node name="Hazards" type="Node2D" parent="."]
+[node name="Hazards" type="Node2D" parent="." unique_id=1998747270]
 
-[node name="tilSpikes" parent="Hazards" instance=ExtResource("5_a4uqv")]
+[node name="tilSpikes" parent="Hazards" unique_id=917368017 instance=ExtResource("5_a4uqv")]
 
-[node name="Trigger_related" type="Node2D" parent="."]
+[node name="Trigger_related" type="Node2D" parent="." unique_id=97034353]

@@ -1,20 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://blwcesaom6rxd"]
+[gd_scene format=3 uid="uid://blwcesaom6rxd"]
 
-[ext_resource type="Script" path="res://Scripts/Gimmicks/scrWater.gd" id="1_allvi"]
+[ext_resource type="Script" uid="uid://bcnspq4qnnvdn" path="res://Scripts/Gimmicks/scrWater.gd" id="1_allvi"]
 
-[node name="objWater" type="Polygon2D" groups=["Water"]]
+[node name="objWater" type="Polygon2D" unique_id=2013714344 groups=["Water"]]
 z_index = 10
 color = Color(0.25098, 0.25098, 1, 0.490196)
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 script = ExtResource("1_allvi")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1855750008]
 visible = false
 collision_layer = 128
 collision_mask = 0
 monitoring = false
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1727458836]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 metadata/_edit_lock_ = true

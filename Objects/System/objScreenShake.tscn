@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3xbo37x587nf"]
+[gd_scene format=3 uid="uid://b3xbo37x587nf"]
 
 [ext_resource type="Script" uid="uid://bwtexcrvks2qs" path="res://Scripts/System/scrScreenShake.gd" id="1_cahdn"]
 [ext_resource type="Shader" uid="uid://dexoi4kkbtjkv" path="res://Scripts/Shaders/shScreenShake.gdshader" id="2_0b56b"]
@@ -10,12 +10,12 @@ shader_parameter/FactorA = Vector2(100, 100)
 shader_parameter/FactorB = Vector2(1, 1)
 shader_parameter/magnitude = Vector2(0.001, 0.001)
 
-[node name="objScreenShake" type="CanvasLayer"]
+[node name="objScreenShake" type="CanvasLayer" unique_id=1927485698]
 layer = 0
 visible = false
 script = ExtResource("1_cahdn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1463182993]
 material = SubResource("ShaderMaterial_dca8h")
 anchors_preset = 15
 anchor_right = 1.0

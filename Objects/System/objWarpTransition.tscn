@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccrfgtnv6l5eb"]
+[gd_scene format=3 uid="uid://ccrfgtnv6l5eb"]
 
-[ext_resource type="Script" path="res://Scripts/System/scrWarpTransition.gd" id="1_ne4bw"]
+[ext_resource type="Script" uid="uid://01ffqi3rc5q8" path="res://Scripts/System/scrWarpTransition.gd" id="1_ne4bw"]
 
 [sub_resource type="Animation" id="Animation_ohc8j"]
 length = 0.001
@@ -53,20 +53,18 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04axg"]
 _data = {
-"RESET": SubResource("Animation_ohc8j"),
-"fade_from_black": SubResource("Animation_2a2o3"),
-"fade_to_black": SubResource("Animation_fv717")
+&"RESET": SubResource("Animation_ohc8j"),
+&"fade_from_black": SubResource("Animation_2a2o3"),
+&"fade_to_black": SubResource("Animation_fv717")
 }
 
-[node name="objWarpTransition" type="CanvasLayer"]
+[node name="objWarpTransition" type="CanvasLayer" unique_id=546953609]
 script = ExtResource("1_ne4bw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_04axg")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=309911674]
+libraries/ = SubResource("AnimationLibrary_04axg")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=502298003]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
