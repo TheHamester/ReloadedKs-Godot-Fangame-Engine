@@ -206,7 +206,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					GLOBAL_SIGNALS.player_walljumped.emit()
 				
 				# Walljumping should only happen if we hold the jump button first
-				if Input.is_action_pressed("button_jump"):
+				if Input.is_action_just_pressed("button_jump"):
 					if ALTERNATIVE_WALLJUMP:
 						walljumping_action.call()
 						current_state = STATE.JUMPING
