@@ -12,6 +12,7 @@ lifetime = 0.4
 script = ExtResource("1_sa465")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_bl6xv")
 hframes = 2
 
