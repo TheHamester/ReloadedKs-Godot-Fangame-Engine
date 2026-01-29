@@ -6,6 +6,8 @@ extends CharacterBody2D
 const ALTERNATIVE_WALLJUMP:bool = true
 const ALTERNATIVE_WALLJUMP_MULT:float = 5.0 if ALTERNATIVE_WALLJUMP else 1.0
 
+const PLATFORM_FALLTHROUGH:bool = true
+
 const HOLD_TO_SHOOT:bool = true
 const HOLD_TO_SHOOT_INTERVAL:float = 0.2
 
@@ -257,6 +259,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.is_action_pressed("button_shoot"):
 				if current_state != STATE.WALLJUMPING:
 					handle_shooting()
+		
+		if PLATFORM_FALLTHROUGH:
+			if event.is_action_pressed("button_down"):
+				$extraCollisions/Platforms.collision_mask &= ~(1 << 2)
+				collision_mask &= ~(1 << 2)
+				platform_floor_layers &= ~(1 << 2)
+			
+			if event.is_action_released("button_down"):
+				$extraCollisions/Platforms.collision_mask |= 1 << 2
+				collision_mask |= 1 << 2
+				platform_floor_layers |= 1 << 2
 
 
 
