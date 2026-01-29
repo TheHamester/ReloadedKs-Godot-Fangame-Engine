@@ -71,7 +71,6 @@ enum MOVEMENT_TYPE {
 
 # Changes how the player should move when pressing both left and right
 var current_movement_type: MOVEMENT_TYPE = MOVEMENT_TYPE.RIGHT_TAKES_PRIORITY
-var same_wall_walljump_boost: float = 5.0
 
 # Walljump behaviour
 # CLASSIC: Walljumping requires pressing 'jump' and then opposite direction
@@ -83,6 +82,7 @@ enum WALLLJUMP_TYPE {
 
 # Changes walljump behaviour
 var current_walljump_type: WALLLJUMP_TYPE = WALLLJUMP_TYPE.CLASSIC
+var same_wall_walljump_boost: float = 5.0
 
 # Shooting behaviour
 # TAPPING: Shoots one bullet at the time
