@@ -3,6 +3,9 @@ extends CharacterBody2D
 """----------------------------------------
 -------------- FEATURE_FLAGS -------------- 
 ----------------------------------------"""
+const ALTERNATIVE_WALLJUMP:bool = true
+const ALTERNATIVE_WALLJUMP_MULT:float = 5.0 if ALTERNATIVE_WALLJUMP else 1.0
+
 const HOLD_TO_SHOOT:bool = true
 const HOLD_TO_SHOOT_INTERVAL:float = 0.2
 
@@ -192,7 +195,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			STATE.WALLJUMPING:
 				var jump_direction = get_wall_normal()
 				var walljumping_action = func():
-					main_velocity.x = jump_direction.x * h_speed
+					main_velocity.x = jump_direction.x * h_speed * ALTERNATIVE_WALLJUMP_MULT
 					main_velocity.y = -s_jump_speed
 					can_walljump = false
 					GLOBAL_SOUNDS.play_sound("sndJump")
@@ -202,18 +205,28 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 				# Walljumping should only happen if we hold the jump button first
 				if Input.is_action_pressed("button_jump"):
-				
-					# Walljump to the right
-					if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
-						horizontal_movement_direction = 1.0
+					if ALTERNATIVE_WALLJUMP:
 						walljumping_action.call()
 						current_state = STATE.JUMPING
-					
-					# Walljump to the left
-					if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
-						horizontal_movement_direction = -1.0
-						walljumping_action.call()
-						current_state = STATE.JUMPING
+						d_jump = true
+						
+						if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
+							horizontal_movement_direction = 1.0
+							
+						if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
+							horizontal_movement_direction = -1.0
+					else:
+						# Walljump to the right
+						if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
+							horizontal_movement_direction = 1.0
+							walljumping_action.call()
+							current_state = STATE.JUMPING
+						
+						# Walljump to the left
+						if Input.is_action_just_pressed("button_left") and (jump_direction == Vector2.LEFT):
+							horizontal_movement_direction = -1.0
+							walljumping_action.call()
+							current_state = STATE.JUMPING
 				else:
 					# While not holding the jump button, pressing left or right on
 					# the opposite direction to the vine leaves it and stops the
