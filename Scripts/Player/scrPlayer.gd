@@ -1,11 +1,6 @@
 extends CharacterBody2D
 
 """----------------------------------------
--------------- FEATURE_FLAGS -------------- 
-----------------------------------------"""
-const PLATFORM_FALLTHROUGH:bool = true
-
-"""----------------------------------------
 ---------- VARIABLE DECLARATIONS ---------- 
 ----------------------------------------"""
 var gravity: int = 1000
@@ -97,6 +92,8 @@ var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.TAPPING
 var shooting_interval:float = 0.1
 # Max amount of bullets on the screen (-1 of unlimited)
 var max_bullets:int = 4
+
+var allow_platform_fallthrough: bool = true
 
 """---------------------------------
 ---------- CREATION EVENT ----------
@@ -286,7 +283,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					handle_shooting()
 		
 		# Pressing down disables collisions with platforms, allowing you to fall through
-		if PLATFORM_FALLTHROUGH:
+		if allow_platform_fallthrough:
 			# Disable platform collisions
 			if event.is_action_pressed("button_down"):
 				$extraCollisions/Platforms.collision_mask &= ~(1 << 2)
