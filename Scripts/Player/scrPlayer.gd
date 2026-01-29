@@ -93,7 +93,7 @@ enum SHOOTING_TYPE {
 }
 
 # Changes shooting behaviour
-var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.TAPPING
+var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.HOLDING
 var shooting_interval:float = 0.2
 var max_bullets:int = 4
 
@@ -278,18 +278,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		
 		# Extra input actions
-		# Shooting
+		# Tap shooting
 		if current_shooting_type == SHOOTING_TYPE.TAPPING:
 			if event.is_action_pressed("button_shoot"):
 				if current_state != STATE.WALLJUMPING:
 					handle_shooting()
 		
+		# Pressing down disables collisions with platforms, allowing you to fall through
 		if PLATFORM_FALLTHROUGH:
+			# Disable platform collisions
 			if event.is_action_pressed("button_down"):
 				$extraCollisions/Platforms.collision_mask &= ~(1 << 2)
 				collision_mask &= ~(1 << 2)
 				platform_floor_layers &= ~(1 << 2)
 			
+			# Enable platform collisions
 			if event.is_action_released("button_down"):
 				$extraCollisions/Platforms.collision_mask |= 1 << 2
 				collision_mask |= 1 << 2
