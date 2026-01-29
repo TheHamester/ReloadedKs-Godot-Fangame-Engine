@@ -1,6 +1,12 @@
 extends CharacterBody2D
 
 """----------------------------------------
+-------------- FEATURE_FLAGS -------------- 
+----------------------------------------"""
+const HOLD_TO_SHOOT:bool = true
+const HOLD_TO_SHOOT_INTERVAL:float = 0.2
+
+"""----------------------------------------
 ---------- VARIABLE DECLARATIONS ---------- 
 ----------------------------------------"""
 var gravity: int = 1000
@@ -29,6 +35,7 @@ var is_pushing_physics_object: bool = false
 var is_on_wind: bool = false
 var wind_velocity: Vector2 = Vector2.ZERO
 var stored_wind_velocity: Vector2 = Vector2.ZERO
+var shoot_timer:float = 0.0
 var sprite_offset: float = -1.1
 var create_bullet := preload("res://Objects/Player/objBullet.tscn")
 var jump_particle := preload("res://Objects/Player/objJumpParticle.tscn")
@@ -233,10 +240,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		# Extra input actions
 		# Shooting
-		if event.is_action_pressed("button_shoot"):
-			if current_state != STATE.WALLJUMPING:
-				handle_shooting()
-
+		if not HOLD_TO_SHOOT:
+			if event.is_action_pressed("button_shoot"):
+				if current_state != STATE.WALLJUMPING:
+					handle_shooting()
 
 
 
@@ -509,6 +516,15 @@ func _physics_process(delta):
 		else:
 			wind_velocity = Vector2.ZERO
 	
+	if HOLD_TO_SHOOT:
+		if Input.is_action_pressed("button_shoot"):
+			if shoot_timer <= 0.0:
+				handle_shooting()
+				shoot_timer = HOLD_TO_SHOOT_INTERVAL
+			shoot_timer -= delta
+		
+		if Input.is_action_just_released("button_shoot"):
+			shoot_timer = 0.0
 	
 	# Teleports the player to the mouse position when "button_debug_teleport"
 	# is pressed (only on debug mode)
