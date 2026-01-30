@@ -78,6 +78,7 @@ enum WALLLJUMP_TYPE {
 # Changes walljump behaviour
 var current_walljump_type: WALLLJUMP_TYPE = WALLLJUMP_TYPE.CLASSIC
 var same_wall_walljump_boost: float = 5.0
+var walljump_replanishes_d_jump: bool = false
 
 # Shooting behaviour
 # TAPPING: Shoots one bullet at the time
@@ -216,8 +217,11 @@ func _unhandled_input(event: InputEvent) -> void:
 					main_velocity.x = jump_direction.x * h_speed
 					if current_walljump_type == WALLLJUMP_TYPE.SAME_WALL:
 						main_velocity.x *= same_wall_walljump_boost
-					
 					main_velocity.y = -s_jump_speed
+					
+					if walljump_replanishes_d_jump:
+						d_jump = true
+						
 					can_walljump = false
 					GLOBAL_SOUNDS.play_sound("sndJump")
 					
@@ -244,7 +248,6 @@ func _unhandled_input(event: InputEvent) -> void:
 						if Input.is_action_just_pressed("button_jump"):
 							walljumping_action.call()
 							current_state = STATE.JUMPING
-							d_jump = true
 							
 							if Input.is_action_just_pressed("button_right") and jump_direction == Vector2.RIGHT:
 								horizontal_movement_direction = 1.0
