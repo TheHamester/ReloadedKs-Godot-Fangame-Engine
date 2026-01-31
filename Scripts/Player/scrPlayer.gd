@@ -91,7 +91,7 @@ enum SHOOTING_TYPE {
 # Changes shooting behaviour
 var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.TAPPING
 var shooting_interval:float = 0.1
-# Max amount of bullets on the screen (-1 of unlimited)
+# Max amount of bullets on the screen (-1 for unlimited)
 var max_bullets:int = 4
 
 # Allow falling through platform on pressing 'down'
