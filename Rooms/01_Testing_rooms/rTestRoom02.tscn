@@ -53,6 +53,7 @@ position = Vector2(400, 496)
 [node name="objWarp" parent="Room_related" unique_id=1222837504 instance=ExtResource("4_cy3jd")]
 position = Vector2(400, 432)
 warp_to = "res://Rooms/01_Testing_rooms/rRoomSelection.tscn"
+warp_transition = true
 
 [node name="Gimmicks" type="Node2D" parent="." unique_id=1554653194]
 

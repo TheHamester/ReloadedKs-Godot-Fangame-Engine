@@ -87,6 +87,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="objWarp6" parent="Room_related" unique_id=321847413 instance=ExtResource("8_k8bft")]
+position = Vector2(402, 521)
+warp_to = "uid://bx5kjjovwwoob"
+
+[node name="Label2" type="Label" parent="Room_related/objWarp6" unique_id=427954085]
+offset_left = -80.0
+offset_top = -48.0
+offset_right = 80.0
+offset_bottom = -16.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("9_3lttj")
+theme_override_font_sizes/font_size = 20
+text = "Testing Room 06"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="objWarp3" parent="Room_related" unique_id=917574600 instance=ExtResource("8_k8bft")]
 position = Vector2(624, 240)
 warp_to = "res://Rooms/01_Testing_rooms/rTestRoom03.tscn"

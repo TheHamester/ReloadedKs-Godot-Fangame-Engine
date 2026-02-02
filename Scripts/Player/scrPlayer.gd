@@ -65,7 +65,7 @@ enum MOVEMENT_TYPE {
 }
 
 # Changes how the player should move when pressing both left and right
-var current_movement_type: MOVEMENT_TYPE = MOVEMENT_TYPE.RIGHT_TAKES_PRIORITY
+var current_movement_type: MOVEMENT_TYPE = MOVEMENT_TYPE.LAST_DIRECTION_TAKES_PRIORITY
 
 # Walljump behaviour
 # CLASSIC: Walljumping requires pressing 'jump' and then opposite direction
@@ -76,9 +76,9 @@ enum WALLLJUMP_TYPE {
 }
 
 # Changes walljump behaviour
-var current_walljump_type: WALLLJUMP_TYPE = WALLLJUMP_TYPE.CLASSIC
+var current_walljump_type: WALLLJUMP_TYPE = WALLLJUMP_TYPE.SAME_WALL
 var same_wall_walljump_boost: float = 5.0
-var walljump_replanishes_d_jump: bool = false
+var walljump_replanishes_d_jump: bool = true
 
 # Shooting behaviour
 # TAPPING: Shoots one bullet at the time
@@ -89,7 +89,7 @@ enum SHOOTING_TYPE {
 }
 
 # Changes shooting behaviour
-var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.TAPPING
+var current_shooting_type: SHOOTING_TYPE = SHOOTING_TYPE.HOLDING
 var shooting_interval:float = 0.1
 # Max amount of bullets on the screen (-1 for unlimited)
 var max_bullets:int = 4

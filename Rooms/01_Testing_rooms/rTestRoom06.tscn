@@ -1,0 +1,44 @@
+[gd_scene format=4 uid="uid://bx5kjjovwwoob"]
+
+[ext_resource type="PackedScene" uid="uid://byy0nyaw6gtki" path="res://Objects/Room_objects/objMusicPlayer.tscn" id="1_lew6x"]
+[ext_resource type="PackedScene" uid="uid://bm40t36a6m8sc" path="res://Objects/Tiles/til32x32.tscn" id="2_1dynn"]
+[ext_resource type="PackedScene" uid="uid://wr3v4lkgftxk" path="res://Objects/Tiles/til16x16.tscn" id="3_jemks"]
+[ext_resource type="PackedScene" uid="uid://cinj525l66hoo" path="res://Objects/Player/objPlayer.tscn" id="3_lnd1s"]
+[ext_resource type="PackedScene" uid="uid://yab7pya0yr1j" path="res://Objects/Room_objects/objCameraFixed.tscn" id="4_7xdmw"]
+[ext_resource type="PackedScene" uid="uid://c363rig7brl0p" path="res://Objects/Gimmicks/objMovingPlatform.tscn" id="5_3hd4j"]
+[ext_resource type="PackedScene" uid="uid://disuddxn6h6vm" path="res://Objects/Hazards/tilSpikes.tscn" id="5_3xshq"]
+
+[node name="rTemplate" type="Node2D" unique_id=857169192]
+
+[node name="Environment" type="Node2D" parent="." unique_id=1055363103]
+
+[node name="objMusicPlayer" parent="Environment" unique_id=1013450632 instance=ExtResource("1_lew6x")]
+position = Vector2(-16, 16)
+
+[node name="til32x32" parent="Environment" unique_id=2128410256 instance=ExtResource("2_1dynn")]
+tile_map_data = PackedByteArray("AAAAAAoAAAABAAAAAAABAAoAAAABAAAAAAACAAoAAAABAAAAAAADAAoAAAABAAAAAAAEAAoAAAABAAAAAAAGAAMAAAABAAAAAAAGAAQAAAABAAAAAAAGAAUAAAABAAAAAAAGAAYAAAABAAAAAAAGAAcAAAABAAAAAAAGAAgAAAABAAAAAAAGAAkAAAABAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAKAAoAAAABAAAAAAALAAoAAAABAAAAAAAMAAoAAAABAAAAAAA=")
+
+[node name="til16x16" parent="Environment" unique_id=1645427826 instance=ExtResource("3_jemks")]
+
+[node name="Room_related" type="Node2D" parent="." unique_id=524669499]
+
+[node name="objPlayer" parent="Room_related" unique_id=584378172 instance=ExtResource("3_lnd1s")]
+position = Vector2(20, 302)
+
+[node name="objCameraFixed" parent="Room_related" unique_id=1343713258 node_paths=PackedStringArray("target_node") instance=ExtResource("4_7xdmw")]
+position = Vector2(-16, 48)
+target_node = NodePath("../objPlayer")
+
+[node name="Gimmicks" type="Node2D" parent="." unique_id=1025430005]
+
+[node name="objMovingPlatform" parent="Gimmicks" unique_id=898204392 instance=ExtResource("5_3hd4j")]
+position = Vector2(176, 320)
+
+[node name="objMovingPlatform2" parent="Gimmicks" unique_id=406225427 instance=ExtResource("5_3hd4j")]
+position = Vector2(240, 320)
+
+[node name="Hazards" type="Node2D" parent="." unique_id=1998747270]
+
+[node name="tilSpikes" parent="Hazards" unique_id=917368017 instance=ExtResource("5_3xshq")]
+
+[node name="Trigger_related" type="Node2D" parent="." unique_id=97034353]
