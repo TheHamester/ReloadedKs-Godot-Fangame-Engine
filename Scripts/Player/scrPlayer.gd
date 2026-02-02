@@ -59,6 +59,7 @@ var current_state: STATE = STATE.ON_CREATION
 # STOP_ON_BOTH: pressing both keys stops movement entirely
 enum MOVEMENT_TYPE {
 	RIGHT_TAKES_PRIORITY,
+	RIGHT_TAKES_PRIORITY_FOR_WALLJUMPING,
 	FIRST_DIRECTION_KEEPS_PRIORITY,
 	LAST_DIRECTION_TAKES_PRIORITY,
 	STOP_ON_BOTH
@@ -347,7 +348,13 @@ func _unhandled_key_input(event: InputEvent):
 				position.x -= 1
 			if event.keycode == KEY_6:
 				position.x += 1
-
+			
+			# Switch horizontal orientation
+			if event.keycode == KEY_7:
+				if looking_at == 1.0:
+					orient_player(-1.0)
+				else:
+					orient_player(1.0)
 
 
 
@@ -615,6 +622,31 @@ func handle_horizontal_input():
 				horizontal_movement_direction = -1.0
 			else:
 				horizontal_movement_direction = 0.0
+			
+			# For walljumping, we need to be touching a vine while not grounded.
+			# If so, we reset our movement direction and change into a transitional
+			# walljump state
+			if can_walljump:
+				if not is_on_floor():
+					horizontal_movement_direction = 0.0
+					current_movement_type = MOVEMENT_TYPE.RIGHT_TAKES_PRIORITY_FOR_WALLJUMPING
+		
+		
+		# A temporary state which gets accessed only when the movement type is
+		# RIGHT_TAKES_PRIORITY and the player is walljumping. This is pretty
+		# much a copy of FIRST_DIRECTION_KEEPS_PRIORITY, and it gets turned
+		# back into RIGHT_TAKES_PRIORITY as soon as the player is grounded.
+		# Makes walljumps feel consistent on both sides for that movement type
+		MOVEMENT_TYPE.RIGHT_TAKES_PRIORITY_FOR_WALLJUMPING:
+			if not is_on_floor():
+				if Input.get_axis("button_left", "button_right") != 0:
+					horizontal_movement_direction = Input.get_axis("button_left", "button_right")
+				else:
+					if not Input.is_action_pressed("button_left") and not Input.is_action_pressed("button_right"):
+						horizontal_movement_direction = 0
+			else:
+				horizontal_movement_direction = 0.0
+				current_movement_type = MOVEMENT_TYPE.RIGHT_TAKES_PRIORITY
 		
 		
 		# If pressing "button_left" or "button_right", gets horizontal input and sets
